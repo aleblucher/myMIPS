@@ -1,0 +1,535 @@
+Analysis & Synthesis report for MIPS
+Fri May 22 12:09:42 2020
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Parameter Settings for User Entity Instance: fluxo_dados:FD|registradorGenerico:PC
+ 10. Parameter Settings for User Entity Instance: fluxo_dados:FD|memoriaROM:ROM
+ 11. Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico2x1:Mux1
+ 12. Parameter Settings for User Entity Instance: fluxo_dados:FD|bancoRegistradores:Banco_Regs
+ 13. Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico2x1:Mux2
+ 14. Parameter Settings for User Entity Instance: fluxo_dados:FD|extendeSinalGenerico:Extensor
+ 15. Parameter Settings for User Entity Instance: fluxo_dados:FD|ULA:ULA
+ 16. Parameter Settings for User Entity Instance: fluxo_dados:FD|memoriaRAM:RAM
+ 17. Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico2x1:Mux3
+ 18. Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico2x1:Mux4
+ 19. Parameter Settings for User Entity Instance: fluxo_dados:FD|shift2:shift_1
+ 20. Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico2x1:Mux0
+ 21. Parameter Settings for User Entity Instance: fluxo_dados:FD|somaConstante:SomadorConstante
+ 22. Parameter Settings for User Entity Instance: fluxo_dados:FD|shift2_imediato:shift_2
+ 23. Parameter Settings for User Entity Instance: fluxo_dados:FD|somador:Somador
+ 24. Port Connectivity Checks: "fluxo_dados:FD|registradorGenerico:PC"
+ 25. Post-Synthesis Netlist Statistics for Top Partition
+ 26. Elapsed Time Per Partition
+ 27. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri May 22 12:09:42 2020       ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                      ; MIPS                                        ;
+; Top-level Entity Name              ; MIPS                                        ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 0                                           ;
+;     Total combinational functions  ; 0                                           ;
+;     Dedicated logic registers      ; 0                                           ;
+; Total registers                    ; 0                                           ;
+; Total pins                         ; 1                                           ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                            ; MIPS               ; MIPS               ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; VHDL Show LMF Mapping Messages                                   ; Off                ;                    ;
+; VHDL Version                                                     ; VHDL_2008          ; VHDL_1993          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                             ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                      ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
+; constantesMIPS.vhd               ; yes             ; User VHDL File  ; /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/constantesMIPS.vhd       ;         ;
+; fluxo_dados.vhd                  ; yes             ; User VHDL File  ; /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/fluxo_dados.vhd          ;         ;
+; registradorGenerico.vhd          ; yes             ; User VHDL File  ; /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/registradorGenerico.vhd  ;         ;
+; memoriaROM.vhd                   ; yes             ; User VHDL File  ; /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/memoriaROM.vhd           ;         ;
+; muxGenerico2x1.vhd               ; yes             ; User VHDL File  ; /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/muxGenerico2x1.vhd       ;         ;
+; bancoRegistradores.vhd           ; yes             ; User VHDL File  ; /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/bancoRegistradores.vhd   ;         ;
+; extendeSinalGenerico.vhd         ; yes             ; User VHDL File  ; /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/extendeSinalGenerico.vhd ;         ;
+; ULA.vhd                          ; yes             ; User VHDL File  ; /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/ULA.vhd                  ;         ;
+; UC_ULA.vhd                       ; yes             ; User VHDL File  ; /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/UC_ULA.vhd               ;         ;
+; memoriaRAM.vhd                   ; yes             ; User VHDL File  ; /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/memoriaRAM.vhd           ;         ;
+; shift2_imediato.vhd              ; yes             ; User VHDL File  ; /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/shift2_imediato.vhd      ;         ;
+; shift2.vhd                       ; yes             ; User VHDL File  ; /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/shift2.vhd               ;         ;
+; somaConstante.vhd                ; yes             ; User VHDL File  ; /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/somaConstante.vhd        ;         ;
+; somador.vhd                      ; yes             ; User VHDL File  ; /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/somador.vhd              ;         ;
+; UC.vhd                           ; yes             ; User VHDL File  ; /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/UC.vhd                   ;         ;
+; MIPS.vhd                         ; yes             ; User VHDL File  ; /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/MIPS.vhd                 ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+;                                             ;       ;
+; Total combinational functions               ; 0     ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- <=2 input functions                  ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+;     -- Dedicated logic registers            ; 0     ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 1     ;
+;                                             ;       ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+;                                             ;       ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 1     ;
+; Total fan-out                               ; 1     ;
+; Average fan-out                             ; 0.50  ;
++---------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; |MIPS                      ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 1    ; 0            ; |MIPS               ; MIPS        ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|registradorGenerico:PC ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; larguradados   ; 32    ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|memoriaROM:ROM ;
++-----------------+-------+--------------------------------------------------+
+; Parameter Name  ; Value ; Type                                             ;
++-----------------+-------+--------------------------------------------------+
+; datawidth       ; 32    ; Signed Integer                                   ;
+; addrwidth       ; 32    ; Signed Integer                                   ;
+; memoryaddrwidth ; 6     ; Signed Integer                                   ;
++-----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico2x1:Mux1 ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; larguradados   ; 5     ; Signed Integer                                         ;
++----------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|bancoRegistradores:Banco_Regs ;
++---------------------+-------+-------------------------------------------------------------+
+; Parameter Name      ; Value ; Type                                                        ;
++---------------------+-------+-------------------------------------------------------------+
+; larguradados        ; 32    ; Signed Integer                                              ;
+; larguraendbancoregs ; 5     ; Signed Integer                                              ;
++---------------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico2x1:Mux2 ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; larguradados   ; 32    ; Signed Integer                                         ;
++----------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|extendeSinalGenerico:Extensor ;
++--------------------+-------+--------------------------------------------------------------+
+; Parameter Name     ; Value ; Type                                                         ;
++--------------------+-------+--------------------------------------------------------------+
+; larguradadoentrada ; 16    ; Signed Integer                                               ;
+; larguradadosaida   ; 32    ; Signed Integer                                               ;
++--------------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|ULA:ULA ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; num_bits       ; 32    ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|memoriaRAM:RAM ;
++-----------------+-------+--------------------------------------------------+
+; Parameter Name  ; Value ; Type                                             ;
++-----------------+-------+--------------------------------------------------+
+; datawidth       ; 32    ; Signed Integer                                   ;
+; addrwidth       ; 32    ; Signed Integer                                   ;
+; memoryaddrwidth ; 6     ; Signed Integer                                   ;
++-----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico2x1:Mux3 ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; larguradados   ; 32    ; Signed Integer                                         ;
++----------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico2x1:Mux4 ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; larguradados   ; 32    ; Signed Integer                                         ;
++----------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|shift2:shift_1 ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; larguradado    ; 26    ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|muxGenerico2x1:Mux0 ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; larguradados   ; 32    ; Signed Integer                                         ;
++----------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|somaConstante:SomadorConstante ;
++----------------+-------+-------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                              ;
++----------------+-------+-------------------------------------------------------------------+
+; larguradados   ; 32    ; Signed Integer                                                    ;
+; constante      ; 4     ; Signed Integer                                                    ;
++----------------+-------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|shift2_imediato:shift_2 ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; larguradado    ; 32    ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|somador:Somador ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; larguradados   ; 32    ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Port Connectivity Checks: "fluxo_dados:FD|registradorGenerico:PC" ;
++--------+-------+----------+---------------------------------------+
+; Port   ; Type  ; Severity ; Details                               ;
++--------+-------+----------+---------------------------------------+
+; enable ; Input ; Info     ; Stuck at VCC                          ;
+; rst    ; Input ; Info     ; Stuck at GND                          ;
++--------+-------+----------+---------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-------------------+---------------------------------+
+; Type              ; Count                           ;
++-------------------+---------------------------------+
+; boundary_port     ; 1                               ;
+;                   ;                                 ;
+; Max LUT depth     ; 0.00                            ;
+; Average LUT depth ; 0.00                            ;
++-------------------+---------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Fri May 22 12:09:34 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPS -c MIPS
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 1 design units, including 0 entities, in source file constantesMIPS.vhd
+    Info (12022): Found design unit 1: constantesMIPS File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/constantesMIPS.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file fluxo_dados.vhd
+    Info (12022): Found design unit 1: fluxo_dados-comportamento File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/fluxo_dados.vhd Line: 16
+    Info (12023): Found entity 1: fluxo_dados File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/fluxo_dados.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file registradorGenerico.vhd
+    Info (12022): Found design unit 1: registradorGenerico-comportamento File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/registradorGenerico.vhd Line: 15
+    Info (12023): Found entity 1: registradorGenerico File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/registradorGenerico.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file memoriaROM.vhd
+    Info (12022): Found design unit 1: memoriaROM-assinc File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/memoriaROM.vhd Line: 15
+    Info (12023): Found entity 1: memoriaROM File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/memoriaROM.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file muxGenerico2x1.vhd
+    Info (12022): Found design unit 1: muxGenerico2x1-comportamento File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/muxGenerico2x1.vhd Line: 15
+    Info (12023): Found entity 1: muxGenerico2x1 File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/muxGenerico2x1.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file bancoRegistradores.vhd
+    Info (12022): Found design unit 1: bancoRegistradores-comportamento File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/bancoRegistradores.vhd Line: 30
+    Info (12023): Found entity 1: bancoRegistradores File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/bancoRegistradores.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file extendeSinalGenerico.vhd
+    Info (12022): Found design unit 1: extendeSinalGenerico-comportamento File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/extendeSinalGenerico.vhd Line: 19
+    Info (12023): Found entity 1: extendeSinalGenerico File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/extendeSinalGenerico.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file ULA.vhd
+    Info (12022): Found design unit 1: ULA-behv File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/ULA.vhd Line: 21
+    Info (12023): Found entity 1: ULA File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/ULA.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file UC_ULA.vhd
+    Info (12022): Found design unit 1: UC_ULA-bhv File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/UC_ULA.vhd Line: 14
+    Info (12023): Found entity 1: UC_ULA File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/UC_ULA.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file memoriaRAM.vhd
+    Info (12022): Found design unit 1: memoriaRAM-rtl File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/memoriaRAM.vhd Line: 21
+    Info (12023): Found entity 1: memoriaRAM File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/memoriaRAM.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file shift2_imediato.vhd
+    Info (12022): Found design unit 1: shift2_imediato-comportamento File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/shift2_imediato.vhd Line: 16
+    Info (12023): Found entity 1: shift2_imediato File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/shift2_imediato.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file shift2.vhd
+    Info (12022): Found design unit 1: shift2-comportamento File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/shift2.vhd Line: 16
+    Info (12023): Found entity 1: shift2 File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/shift2.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file somaConstante.vhd
+    Info (12022): Found design unit 1: somaConstante-comportamento File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/somaConstante.vhd Line: 18
+    Info (12023): Found entity 1: somaConstante File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/somaConstante.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file somador.vhd
+    Info (12022): Found design unit 1: somador-comportamento File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/somador.vhd Line: 18
+    Info (12023): Found entity 1: somador File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/somador.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file UC.vhd
+    Info (12022): Found design unit 1: UC-comportamento File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/UC.vhd Line: 14
+    Info (12023): Found entity 1: UC File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/UC.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file MIPS.vhd
+    Info (12022): Found design unit 1: MIPS-comportamento File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/MIPS.vhd Line: 12
+    Info (12023): Found entity 1: MIPS File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/MIPS.vhd Line: 5
+Info (12127): Elaborating entity "MIPS" for the top level hierarchy
+Info (12128): Elaborating entity "fluxo_dados" for hierarchy "fluxo_dados:FD" File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/MIPS.vhd Line: 19
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "fluxo_dados:FD|registradorGenerico:PC" File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/fluxo_dados.vhd Line: 69
+Info (12128): Elaborating entity "memoriaROM" for hierarchy "fluxo_dados:FD|memoriaROM:ROM" File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/fluxo_dados.vhd Line: 82
+Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "fluxo_dados:FD|muxGenerico2x1:Mux1" File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/fluxo_dados.vhd Line: 93
+Info (12128): Elaborating entity "bancoRegistradores" for hierarchy "fluxo_dados:FD|bancoRegistradores:Banco_Regs" File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/fluxo_dados.vhd Line: 105
+Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "fluxo_dados:FD|muxGenerico2x1:Mux2" File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/fluxo_dados.vhd Line: 125
+Info (12128): Elaborating entity "extendeSinalGenerico" for hierarchy "fluxo_dados:FD|extendeSinalGenerico:Extensor" File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/fluxo_dados.vhd Line: 137
+Info (12128): Elaborating entity "ULA" for hierarchy "fluxo_dados:FD|ULA:ULA" File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/fluxo_dados.vhd Line: 148
+Info (12128): Elaborating entity "UC_ULA" for hierarchy "fluxo_dados:FD|UC_ULA:UC_ULA" File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/fluxo_dados.vhd Line: 161
+Info (12128): Elaborating entity "memoriaRAM" for hierarchy "fluxo_dados:FD|memoriaRAM:RAM" File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/fluxo_dados.vhd Line: 170
+Info (12128): Elaborating entity "shift2" for hierarchy "fluxo_dados:FD|shift2:shift_1" File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/fluxo_dados.vhd Line: 212
+Info (12128): Elaborating entity "somaConstante" for hierarchy "fluxo_dados:FD|somaConstante:SomadorConstante" File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/fluxo_dados.vhd Line: 236
+Info (12128): Elaborating entity "shift2_imediato" for hierarchy "fluxo_dados:FD|shift2_imediato:shift_2" File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/fluxo_dados.vhd Line: 247
+Info (12128): Elaborating entity "somador" for hierarchy "fluxo_dados:FD|somador:Somador" File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/fluxo_dados.vhd Line: 257
+Info (12128): Elaborating entity "UC" for hierarchy "UC:UC" File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/MIPS.vhd Line: 28
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clk" File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/MIPS/MIPS.vhd Line: 8
+Info (21057): Implemented 1 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
+    Info (21059): Implemented 0 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 956 megabytes
+    Info: Processing ended: Fri May 22 12:09:42 2020
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:21
+
+
