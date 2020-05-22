@@ -7,8 +7,9 @@ entity fluxo_dados is
     (
         clk			          	  : IN STD_LOGIC;
         pontos_controle	        : IN STD_LOGIC_VECTOR(CONTROLWORD_WIDTH-1 DOWNTO 0);
-		  out_opcode				  : OUT STD_LOGIC_VECTOR(OPCODE_WIDTH-1 DOWNTO 0)
-		  --saidaUla 					  : OUT STD_LOGIC_VECTOR(DATA_WIDTH-1 DOWNTO 0)
+		  out_opcode				  : OUT STD_LOGIC_VECTOR(OPCODE_WIDTH-1 DOWNTO 0);
+		  saidaUla 					  : OUT STD_LOGIC_VECTOR(DATA_WIDTH-1 DOWNTO 0);
+		  saidaPC					  : OUT STD_LOGIC_VECTOR(ADDR_WIDTH-1 DOWNTO 0)
     );
 	 
 end entity;
@@ -77,6 +78,8 @@ begin
 					ENABLE => '1', 
 					RST => '0'
 				);
+	
+	saidaPC <= out_PC;
 				
 	-- checar !! 			
 	ROM: entity work.memoriaROM
@@ -156,6 +159,8 @@ begin
             C   => out_ULA,
             Z   => out_Z
         );
+		  
+	saidaUla <= out_ULA;
 				
 	-- codigo do semestre passado, conferir
 	 UC_ULA : entity work.UC_ULA 
