@@ -1,5 +1,5 @@
 Flow report for MIPS
-Tue May 26 13:14:55 2020
+Tue May 26 14:41:35 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,15 +40,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Tue May 26 13:14:55 2020       ;
+; Flow Status                        ; Successful - Tue May 26 14:41:35 2020       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; MIPS                                        ;
 ; Top-level Entity Name              ; MIPS                                        ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 4,171                                       ;
-;     Total combinational functions  ; 2,027                                       ;
+; Total logic elements               ; 4,174                                       ;
+;     Total combinational functions  ; 2,037                                       ;
 ;     Dedicated logic registers      ; 2,238                                       ;
 ; Total registers                    ; 2238                                        ;
 ; Total pins                         ; 81                                          ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/26/2020 13:13:29 ;
+; Start date & time ; 05/26/2020 14:41:20 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; MIPS                ;
 +-------------------+---------------------+
@@ -75,10 +75,11 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 229436432934647.159050960929528        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 229436432934647.159051488000780        ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --            ; --          ; --         ;
+; NUM_PARALLEL_PROCESSORS             ; All                                    ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
 ; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
@@ -95,10 +96,8 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:13     ; 1.0                     ; 1019 MB             ; 00:00:24                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 1051 MB             ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 1063 MB             ; 00:00:01                           ;
-; Total                ; 00:00:15     ; --                      ; --                  ; 00:00:25                           ;
+; Analysis & Synthesis ; 00:00:15     ; 1.0                     ; 1014 MB             ; 00:00:29                           ;
+; Total                ; 00:00:15     ; --                      ; --                  ; 00:00:29                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -108,8 +107,6 @@ refer to the applicable agreement for further details.
 ; Module Name          ; Machine Hostname ; OS Name        ; OS Version ; Processor type ;
 +----------------------+------------------+----------------+------------+----------------+
 ; Analysis & Synthesis ; oracle           ; Ubuntu 18.04.4 ; 18         ; x86_64         ;
-; EDA Netlist Writer   ; oracle           ; Ubuntu 18.04.4 ; 18         ; x86_64         ;
-; EDA Netlist Writer   ; oracle           ; Ubuntu 18.04.4 ; 18         ; x86_64         ;
 +----------------------+------------------+----------------+------------+----------------+
 
 
@@ -117,8 +114,6 @@ refer to the applicable agreement for further details.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off MIPS -c MIPS
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off MIPS -c MIPS --vector_source=/home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/myMIPS/MIPS/Waveform.vwf --testbench_file=/home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/myMIPS/MIPS/simulation/qsim/Waveform.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/myMIPS/MIPS/simulation/qsim/ MIPS -c MIPS
 
 
 

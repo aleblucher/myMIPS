@@ -44,11 +44,29 @@ package constantesMIPS is
     constant aluOpAdd : aluOp_t := "00";
     constant aluOpSub : aluOp_t := "01";
     constant aluOpDC : aluOp_t := "XX";
+	 
+	 --
+-- Codigos da palavra de controle:
+--  alias memWRsignal: std_logic is controlWord(0);
+--  alias memRDsignal: std_logic is controlWord(1);
+--  alias beqSignal:   std_logic is controlWord(2);
+--  alias muxUlaMem:   std_logic is controlWord(3);
+--  alias ulaOPvalue:  std_logic_vector(1 downto 0) is controlWord(5 downto 4);
+--  alias muxRtImed:   std_logic is controlWord(6);
+--  alias regcWRsignal:std_logic is controlWord(7);
+--  alias muxRtRd:     std_logic is controlWord(8);
+--  alias muxPcBeqJ:   std_logic is controlWord(9);
+--
+-- ControlWorld Bit:    9   8       7           6     5,4    3     2      1       0
+--Instrução  Opcode    Mux1 Mux2 HabEscritaReg Mux3  ULAOp  Mux4  BEQ HabLeMEM HabEscME
+--Tipo R    |00.0000  | 0 |  1 |     1        |  0  |  10  |  0  | 0 |    0   |    0    |
+--LW        |10.0011  | 0 |  0 |     1        |  1  |  00  |  1  | 0 |    1   |    0    |
+--SW        |10.1011  | 0 |  0 |     0        |  1  |  00  |  0  | 0 |    0   |    1    |
+--BEQ       |00.0100  | 0 |  0 |     0        |  0  |  01  |  0  | 1 |    0   |    0    |
+--J         |00.0010  | 1 |  X |     0        |  X  |  XX  |  X  | X |    0   |    0    |
 
-    -- ALUctr:
-    -- 3: inverteA
-    -- 2: inverteB
-    -- 1-0: sel_mux_ula_op      0 AND 1 OR 2 ADD 3 SLT
+--  Mux1: mux([PC+4, BEQ]/J);  Mux2: mux(Rt/Rd); Mux3: mux(Rt/imediato);  Mux4: mux(ULA/mem).
+
 
     constant ulaCtrlAdd : ctrlALU_t := "010";
     constant ulaCtrlSub : ctrlALU_t := "110";
@@ -56,30 +74,11 @@ package constantesMIPS is
     constant ulaCtrlOr  : ctrlALU_t := "001";
     constant ulaCtrlSlt : ctrlALU_t := "111";
 
-    -- Pontos de controle:
-    -- 7: escreve_RC-
-    -- 6: escreve_RAM-
-    -- 5: leitura_RAM-
-    -- 4: sel_mux_ula_mem:      0 ULA 1 MEM         (escrita no REG)-
-    -- 3: sel_mux_rd_rt:        0 RT_addr 1 RD_addr (endereço de escrita)-
-    -- 2: sel_mux_banco_ula:    0 REG_B 1 imediato  (ULA opera com REG ou imediato)-
-    -- 1: sel_mux_beq:          0 PC+4  1 PC+4+imediato
-    -- 0: sel_mux_jump:         0 saida mux_beq 1 PC+4 & imediato
-
--- ControlWorld Bit:    10-8        7             6             5               4                3                 2                 1               0
---Instrução  Opcode     ALUop   escreve_RC   escreve_RAM   leitura_RAM   sel_mux_ula_mem   sel_mux_rd_rt   sel_mux_banco_ula    sel_mux_beq     sel_mux_jump
---Tipo R    |00.0000  | read  |     1      |      0      |      X      |        0        |       1       |         0         |       0       |       0       |
---J         |00.0010  | X     |     0      |      0      |      X      |        X        |       X       |         X         |       0       |       1       |
---BEQ       |00.0100  | sub   |     0      |      0      |      X      |        X        |       X       |         0         |       1       |       0       |
---LW        |10.0011  | add   |     1      |      0      |      1      |        1        |       0       |         1         |       0       |       0       |
---SW        |10.1011  | add   |     0      |      1      |      X      |        X        |       X       |         1         |       0       |       0       |
-
---  Mux1: mux([PC+4, BEQ]/J);  Mux2: mux(Rt/Rd); Mux3: mux(Rt/imediato);  Mux4: mux(ULA/mem).
 	
 	
 	constant ctrlTipoR:       ctrlWorld_t := "0110100000";
    constant ctrlTipoJ:       ctrlWorld_t := "1X0XXXXX00";
-   constant ctrlTipoLW:      ctrlWorld_t := "0011001010";
+   constant ctrlTipoLW:      ctrlWorld_t := "0011001010"; --0 |  0 |     1        |  1  |  00  |  1  | 0 |    1   |    0 
    constant ctrlTipoSW:      ctrlWorld_t := "0001000001";
    constant ctrlTipoBEQ:     ctrlWorld_t := "0000010100";
    constant ctrlZERO:        ctrlWorld_t := "0000000000";

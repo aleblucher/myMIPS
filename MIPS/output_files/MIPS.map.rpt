@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MIPS
-Tue May 26 13:13:43 2020
+Tue May 26 14:41:35 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -60,13 +60,13 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue May 26 13:13:43 2020       ;
+; Analysis & Synthesis Status        ; Successful - Tue May 26 14:41:35 2020       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; MIPS                                        ;
 ; Top-level Entity Name              ; MIPS                                        ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 4,171                                       ;
-;     Total combinational functions  ; 2,027                                       ;
+; Total logic elements               ; 4,174                                       ;
+;     Total combinational functions  ; 2,037                                       ;
 ;     Dedicated logic registers      ; 2,238                                       ;
 ; Total registers                    ; 2238                                        ;
 ; Total pins                         ; 81                                          ;
@@ -85,6 +85,7 @@ refer to the applicable agreement for further details.
 ; Device                                                           ; EP4CE115F29C7      ;                    ;
 ; Top-level entity name                                            ; MIPS               ; MIPS               ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Maximum processors allowed for parallel compilation              ; All                ;                    ;
 ; VHDL Show LMF Mapping Messages                                   ; Off                ;                    ;
 ; VHDL Version                                                     ; VHDL_2008          ; VHDL_1993          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
@@ -214,16 +215,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 4,171     ;
+; Estimated Total logic elements              ; 4,174     ;
 ;                                             ;           ;
-; Total combinational functions               ; 2027      ;
+; Total combinational functions               ; 2037      ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 1824      ;
-;     -- 3 input functions                    ; 165       ;
-;     -- <=2 input functions                  ; 38        ;
+;     -- 4 input functions                    ; 1807      ;
+;     -- 3 input functions                    ; 182       ;
+;     -- <=2 input functions                  ; 48        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 1907      ;
+;     -- normal mode                          ; 1917      ;
 ;     -- arithmetic mode                      ; 120       ;
 ;                                             ;           ;
 ; Total registers                             ; 2238      ;
@@ -236,8 +237,8 @@ refer to the applicable agreement for further details.
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
 ; Maximum fan-out                             ; 2238      ;
-; Total fan-out                               ; 14729     ;
-; Average fan-out                             ; 3.33      ;
+; Total fan-out                               ; 14723     ;
+; Average fan-out                             ; 3.32      ;
 +---------------------------------------------+-----------+
 
 
@@ -246,18 +247,18 @@ refer to the applicable agreement for further details.
 +----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                 ; Entity Name         ; Library Name ;
 +----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------+---------------------+--------------+
-; |MIPS                                  ; 2027 (0)            ; 2238 (0)                  ; 0           ; 0            ; 0       ; 0         ; 81   ; 0            ; |MIPS                                               ; MIPS                ; work         ;
+; |MIPS                                  ; 2037 (0)            ; 2238 (0)                  ; 0           ; 0            ; 0       ; 0         ; 81   ; 0            ; |MIPS                                               ; MIPS                ; work         ;
 ;    |UC:UC|                             ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS|UC:UC                                         ; UC                  ; work         ;
-;    |fluxo_dados:FD|                    ; 2020 (11)           ; 2238 (0)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS|fluxo_dados:FD                                ; fluxo_dados         ; work         ;
+;    |fluxo_dados:FD|                    ; 2030 (11)           ; 2238 (0)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS|fluxo_dados:FD                                ; fluxo_dados         ; work         ;
 ;       |UC_ULA:UC_ULA|                  ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS|fluxo_dados:FD|UC_ULA:UC_ULA                  ; UC_ULA              ; work         ;
 ;       |ULA:ULA|                        ; 166 (166)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS|fluxo_dados:FD|ULA:ULA                        ; ULA                 ; work         ;
-;       |bancoRegistradores:Banco_Regs|  ; 210 (210)           ; 160 (160)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS|fluxo_dados:FD|bancoRegistradores:Banco_Regs  ; bancoRegistradores  ; work         ;
+;       |bancoRegistradores:Banco_Regs|  ; 218 (218)           ; 160 (160)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS|fluxo_dados:FD|bancoRegistradores:Banco_Regs  ; bancoRegistradores  ; work         ;
 ;       |memoriaRAM:RAM|                 ; 1421 (1421)         ; 2048 (2048)               ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS|fluxo_dados:FD|memoriaRAM:RAM                 ; memoriaRAM          ; work         ;
-;       |memoriaROM:ROM|                 ; 21 (21)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS|fluxo_dados:FD|memoriaROM:ROM                 ; memoriaROM          ; work         ;
-;       |muxGenerico2x1:Mux0|            ; 15 (15)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS|fluxo_dados:FD|muxGenerico2x1:Mux0            ; muxGenerico2x1      ; work         ;
-;       |muxGenerico2x1:Mux2|            ; 56 (56)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS|fluxo_dados:FD|muxGenerico2x1:Mux2            ; muxGenerico2x1      ; work         ;
-;       |muxGenerico2x1:Mux3|            ; 38 (38)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS|fluxo_dados:FD|muxGenerico2x1:Mux3            ; muxGenerico2x1      ; work         ;
-;       |registradorGenerico:PC|         ; 11 (11)             ; 30 (30)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS|fluxo_dados:FD|registradorGenerico:PC         ; registradorGenerico ; work         ;
+;       |memoriaROM:ROM|                 ; 23 (23)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS|fluxo_dados:FD|memoriaROM:ROM                 ; memoriaROM          ; work         ;
+;       |muxGenerico2x1:Mux0|            ; 16 (16)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS|fluxo_dados:FD|muxGenerico2x1:Mux0            ; muxGenerico2x1      ; work         ;
+;       |muxGenerico2x1:Mux2|            ; 57 (57)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS|fluxo_dados:FD|muxGenerico2x1:Mux2            ; muxGenerico2x1      ; work         ;
+;       |muxGenerico2x1:Mux3|            ; 37 (37)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS|fluxo_dados:FD|muxGenerico2x1:Mux3            ; muxGenerico2x1      ; work         ;
+;       |registradorGenerico:PC|         ; 10 (10)             ; 30 (30)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS|fluxo_dados:FD|registradorGenerico:PC         ; registradorGenerico ; work         ;
 ;       |somaConstante:SomadorConstante| ; 30 (30)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS|fluxo_dados:FD|somaConstante:SomadorConstante ; somaConstante       ; work         ;
 ;       |somador:Somador|                ; 34 (34)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS|fluxo_dados:FD|somador:Somador                ; somador             ; work         ;
 +----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------+---------------------+--------------+
@@ -1146,7 +1147,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Total registers                              ; 2238  ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 11    ;
+; Number of registers using Synchronous Load   ; 10    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 2208  ;
@@ -1340,21 +1341,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; boundary_port         ; 81                          ;
 ; cycloneiii_ff         ; 2238                        ;
 ;     ENA               ; 2208                        ;
-;     SLD               ; 11                          ;
-;     plain             ; 19                          ;
-; cycloneiii_lcell_comb ; 2029                        ;
+;     SLD               ; 10                          ;
+;     plain             ; 20                          ;
+; cycloneiii_lcell_comb ; 2039                        ;
 ;     arith             ; 120                         ;
 ;         2 data inputs ; 29                          ;
 ;         3 data inputs ; 91                          ;
-;     normal            ; 1909                        ;
+;     normal            ; 1919                        ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 3                           ;
-;         2 data inputs ; 7                           ;
-;         3 data inputs ; 74                          ;
-;         4 data inputs ; 1824                        ;
+;         1 data inputs ; 10                          ;
+;         2 data inputs ; 10                          ;
+;         3 data inputs ; 91                          ;
+;         4 data inputs ; 1807                        ;
 ;                       ;                             ;
-; Max LUT depth         ; 17.70                       ;
-; Average LUT depth     ; 10.37                       ;
+; Max LUT depth         ; 18.60                       ;
+; Average LUT depth     ; 10.56                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1363,7 +1364,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:05     ;
+; Top            ; 00:00:06     ;
 +----------------+--------------+
 
 
@@ -1373,9 +1374,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue May 26 13:13:29 2020
+    Info: Processing started: Tue May 26 14:41:19 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPS -c MIPS
-Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (12021): Found 1 design units, including 0 entities, in source file constantesMIPS.vhd
     Info (12022): Found design unit 1: constantesMIPS File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/myMIPS/MIPS/constantesMIPS.vhd Line: 5
@@ -1441,7 +1441,7 @@ Info (12128): Elaborating entity "shift2_imediato" for hierarchy "fluxo_dados:FD
 Info (12128): Elaborating entity "somador" for hierarchy "fluxo_dados:FD|somador:Somador" File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/myMIPS/MIPS/fluxo_dados.vhd Line: 263
 Info (12128): Elaborating entity "UC" for hierarchy "UC:UC" File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/myMIPS/MIPS/MIPS.vhd Line: 37
 Info (276014): Found 2 instances of uninferred RAM logic
-    Info (276007): RAM logic "fluxo_dados:FD|bancoRegistradores:Banco_Regs|registrador" is uninferred due to asynchronous read logic File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/myMIPS/MIPS/bancoRegistradores.vhd Line: 36
+    Info (276007): RAM logic "fluxo_dados:FD|bancoRegistradores:Banco_Regs|registrador" is uninferred due to asynchronous read logic File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/myMIPS/MIPS/bancoRegistradores.vhd Line: 58
     Info (276007): RAM logic "fluxo_dados:FD|memoriaRAM:RAM|ram" is uninferred due to asynchronous read logic File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/myMIPS/MIPS/memoriaRAM.vhd Line: 24
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "test_opcode[4]" is stuck at GND File: /home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/myMIPS/MIPS/MIPS.vhd Line: 10
@@ -1451,14 +1451,14 @@ Info (286030): Timing-Driven Synthesis is running
 Info (17049): 768 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 4316 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 4319 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 80 output pins
-    Info (21061): Implemented 4235 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 1047 megabytes
-    Info: Processing ended: Tue May 26 13:13:43 2020
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:25
+    Info (21061): Implemented 4238 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 1040 megabytes
+    Info: Processing ended: Tue May 26 14:41:35 2020
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:29
 
 
