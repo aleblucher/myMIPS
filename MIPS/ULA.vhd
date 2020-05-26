@@ -9,11 +9,12 @@ generic
 		NUM_BITS : natural := 32
 	);
 
-port(	A	:	in std_logic_vector(NUM_BITS-1 downto 0);
-		B	:	in std_logic_vector(NUM_BITS-1 downto 0);
+port(	
+		A		:	in std_logic_vector(NUM_BITS-1 downto 0);
+		B		:	in std_logic_vector(NUM_BITS-1 downto 0);
 		ctr	:	in std_logic_vector(2 downto 0);
-		C	:	out std_logic_vector(NUM_BITS-1 downto 0);
-		Z   : 	out std_logic
+		C		:	out std_logic_vector(NUM_BITS-1 downto 0);
+		Z   	: 	out std_logic
 );
 
 end entity;

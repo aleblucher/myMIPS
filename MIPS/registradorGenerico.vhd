@@ -5,10 +5,11 @@ entity registradorGenerico is
     generic (
         larguraDados : natural := 32
     );
-    port (DIN : in std_logic_vector(larguraDados-1 downto 0);
-       DOUT : out std_logic_vector(larguraDados-1 downto 0);
-       ENABLE : in std_logic;
-       CLK,RST : in std_logic
+    port (
+			DIN 		: in std_logic_vector(larguraDados-1 downto 0);
+			DOUT 		: out std_logic_vector(larguraDados-1 downto 0);
+			ENABLE 	: in std_logic;
+			CLK,RST 	: in std_logic
         );
 end entity;
 

@@ -4,48 +4,46 @@ use ieee.numeric_std.all;
 
 package constantesMIPS is
 
-  constant FUNCT_WIDTH : natural := 6;
-  constant OPCODE_WIDTH : natural := 6;
-  constant CONTROLWORD_WIDTH : natural := 10;
-  constant DATA_WIDTH : natural := 32;
-  constant ADDR_WIDTH : natural := 32;
+-- Constantes corrigidas para estarem de acordo com o MIPS visto em aula
+
+ --- Sizes ---
+  constant DATA_WIDTH 			: natural := 32;
+  constant ADDR_WIDTH 			: natural := 32;
+  constant CONTROLWORD_WIDTH 	: natural := 10;
+  constant ROM_WIDTH				: natural := 8;
+  constant FUNCT_WIDTH 			: natural := 6;
+  constant OPCODE_WIDTH 		: natural := 6;
   constant REGBANK_ADDR_WIDTH : natural := 5;
-  constant ALU_OP_WIDTH : natural := 2;
-  constant CTRL_ALU_WIDTH : natural := 3;
-  constant ROM_WIDTH: natural := 8;
+  constant CTRL_ALU_WIDTH 		: natural := 3;
+  constant ALU_OP_WIDTH 		: natural := 2;
+  
+ --- Subtypes ---
+   subtype opCode_t      is std_logic_vector(OPCODE_WIDTH			-1 downto 0);
+   subtype funct_t       is std_logic_vector(FUNCT_WIDTH				-1 downto 0);
+   subtype ctrlWorld_t   is std_logic_vector(CONTROLWORD_WIDTH		-1 downto 0);
+   subtype aluOp_t       is std_logic_vector(ALU_OP_WIDTH			-1 downto 0);
+   subtype ctrlALU_t     is std_logic_vector(CTRL_ALU_WIDTH			-1 downto 0);
 
--- codigos das instrucoes do DLX:
-   subtype opCode_t      is std_logic_vector(OPCODE_WIDTH-1 downto 0);
-   subtype funct_t       is std_logic_vector(FUNCT_WIDTH-1 downto 0);
-   subtype ctrlWorld_t   is std_logic_vector(CONTROLWORD_WIDTH-1 downto 0);
-   subtype aluOp_t       is std_logic_vector(ALU_OP_WIDTH-1 downto 0);
-   subtype ctrlALU_t     is std_logic_vector(CTRL_ALU_WIDTH-1 downto 0);
-
-   subtype dado_t        is std_logic_vector(DATA_WIDTH-1 downto 0);
-   subtype addr_t        is std_logic_vector(ADDR_WIDTH-1 downto 0);
---
-    constant functADD : funct_t := "100000";
-    constant functSUB : funct_t := "100010";
-    constant functAND : funct_t := "100100";
-    constant functOR  : funct_t := "100101";
-    constant functSLT : funct_t := "101010";
+ --- Funct ---
+    constant functADD 				: funct_t := "100000";
+    constant functSUB 				: funct_t := "100010";
+    constant functAND 				: funct_t := "100100";
+    constant functOR  				: funct_t := "100101";
+    constant functSLT 				: funct_t := "101010";
 	 
-	 -- OP CODES ---
-
+ --- OpCode ---
     constant opCodeTipoR         : opCode_t := "000000";
     constant opCodeLW            : opCode_t := "100011";
     constant opCodeSW            : opCode_t := "101011";
     constant opCodeBEQ           : opCode_t := "000100";
---
     constant opCodeTipoJ         : opCode_t := "000010";
 
-    -- ALU ---
-    constant readFunctULA : aluOp_t := "10";
-    constant aluOpAdd : aluOp_t := "00";
-    constant aluOpSub : aluOp_t := "01";
-    constant aluOpDC : aluOp_t := "XX";
+ --- UlaOp ---
+    constant readFunctULA 			: aluOp_t := "10";
+    constant aluOpAdd 				: aluOp_t := "00";
+    constant aluOpSub 				: aluOp_t := "01";
+    constant aluOpDC 				: aluOp_t := "XX"; -- not used
 	 
-	 --
 -- Codigos da palavra de controle:
 --  alias memWRsignal: std_logic is controlWord(0);
 --  alias memRDsignal: std_logic is controlWord(1);
@@ -67,18 +65,17 @@ package constantesMIPS is
 
 --  Mux1: mux([PC+4, BEQ]/J);  Mux2: mux(Rt/Rd); Mux3: mux(Rt/imediato);  Mux4: mux(ULA/mem).
 
-
+ --- UlaCtrl ---
     constant ulaCtrlAdd : ctrlALU_t := "010";
     constant ulaCtrlSub : ctrlALU_t := "110";
     constant ulaCtrlAnd : ctrlALU_t := "000";
     constant ulaCtrlOr  : ctrlALU_t := "001";
     constant ulaCtrlSlt : ctrlALU_t := "111";
 
-	
-	
+ --- Ctrl Word Type ---
 	constant ctrlTipoR:       ctrlWorld_t := "0110100000";
    constant ctrlTipoJ:       ctrlWorld_t := "1X0XXXXX00";
-   constant ctrlTipoLW:      ctrlWorld_t := "0011001010"; --0 |  0 |     1        |  1  |  00  |  1  | 0 |    1   |    0 
+   constant ctrlTipoLW:      ctrlWorld_t := "0011001010";
    constant ctrlTipoSW:      ctrlWorld_t := "0001000001";
    constant ctrlTipoBEQ:     ctrlWorld_t := "0000010100";
    constant ctrlZERO:        ctrlWorld_t := "0000000000";

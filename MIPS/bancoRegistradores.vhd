@@ -37,7 +37,7 @@ architecture comportamento of bancoRegistradores is
 	  begin
 		-- Inicializa os endereços:
 		
-		   -- $zero (#0) := 0x00
+		-- $zero (#0) := 0x00
       -- $t0 (#8)  := 0x00
       -- $t1 (#9)  := 0x0A
       -- $t2 (#10) := 0x0B

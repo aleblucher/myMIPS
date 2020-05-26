@@ -13,16 +13,17 @@ end entity;
 
 architecture comportamento of UC is
 begin	 
-		pontos_controle <= 	ctrlTipoR when (opcode = opCodeTipoR) else
+		-- Construindo os pontos de controle a partir do tipo do opcode
+		pontos_controle <= 	ctrlTipoR 	when (opcode = opCodeTipoR) 	else
 			
-									ctrlTipoSW when (opcode = opCodeSW) else
+									ctrlTipoSW 	when (opcode = opCodeSW) 		else
 								
-									ctrlTipoLW when (opcode = opCodeLW) else
+									ctrlTipoLW 	when (opcode = opCodeLW)		else
 								
-									ctrlTipoBEQ when (opcode = opCodeBEQ) else
+									ctrlTipoBEQ when (opcode = opCodeBEQ) 		else
 								
-									ctrlTipoJ when (opcode = opCodeTipoJ) else 
+									ctrlTipoJ 	when (opcode = opCodeTipoJ) 	else 
 								
-									ctrlZERO;
+									ctrlZERO; -- nop
 
 end architecture;

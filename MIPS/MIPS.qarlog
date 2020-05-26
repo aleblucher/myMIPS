@@ -1,0 +1,35 @@
+Quartus Prime Archive log --	/home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/myMIPS/MIPS/MIPS.qarlog
+
+Archive:	/home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/myMIPS/MIPS/MIPS.qar
+Date:		Tue May 26 18:19:24 2020
+Quartus Prime		18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+	=========== Files Selected: ===========
+/home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/myMIPS/MIPS/MIPS.qpf
+/home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/myMIPS/MIPS/MIPS.qsf
+/home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/myMIPS/MIPS/MIPS.vhd
+/home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/myMIPS/MIPS/UC.vhd
+/home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/myMIPS/MIPS/UC_ULA.vhd
+/home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/myMIPS/MIPS/ULA.vhd
+/home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/myMIPS/MIPS/Waveform.vwf
+/home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/myMIPS/MIPS/Waveform1.vwf
+/home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/myMIPS/MIPS/bancoRegistradores.vhd
+/home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/myMIPS/MIPS/constantesMIPS.vhd
+/home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/myMIPS/MIPS/conversorHex7Seg.vhd
+/home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/myMIPS/MIPS/edgeDetector.vhd
+/home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/myMIPS/MIPS/extendeSinalGenerico.vhd
+/home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/myMIPS/MIPS/fluxo_dados.vhd
+/home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/myMIPS/MIPS/memoriaRAM.vhd
+/home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/myMIPS/MIPS/memoriaROM.vhd
+/home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/myMIPS/MIPS/muxGenerico2x1.vhd
+/home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/myMIPS/MIPS/output_files/mips.sdc
+/home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/myMIPS/MIPS/registradorGenerico.vhd
+/home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/myMIPS/MIPS/shift2.vhd
+/home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/myMIPS/MIPS/shift2_imediato.vhd
+/home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/myMIPS/MIPS/somaConstante.vhd
+/home/alessandrab/Dropbox/Leca/Insper/7oSem/DesComp/myMIPS/MIPS/somador.vhd
+/home/alessandrab/intelFPGA_lite/18.1/quartus/linux64/assignment_defaults.qdf
+	======= Total: 24 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

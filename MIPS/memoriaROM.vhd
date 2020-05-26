@@ -3,12 +3,18 @@ use IEEE.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity memoriaROM IS
-   generic (
-          dataWidth: natural := 32;
-          addrWidth: natural := 32;
-          memoryAddrWidth:  natural := 6 );   -- 64 posicoes de 32 bits cada
-   port ( Endereco : IN  STD_LOGIC_VECTOR (addrWidth-1 DOWNTO 0);
-          Dado     : OUT STD_LOGIC_VECTOR (dataWidth-1 DOWNTO 0) );
+   generic 
+	(
+		 dataWidth: natural := 32;
+		 addrWidth: natural := 32;
+		 memoryAddrWidth:  natural := 6 
+	);
+   port 
+	( 
+		Endereco : IN  STD_LOGIC_VECTOR (addrWidth-1 DOWNTO 0);
+      Dado     : OUT STD_LOGIC_VECTOR (dataWidth-1 DOWNTO 0) 
+			 
+	);
 end entity;
 
 architecture assincrona OF memoriaROM IS
