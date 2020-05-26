@@ -23,6 +23,6 @@ begin
 								
 									ctrlTipoJ when (opcode = opCodeTipoJ) else 
 								
-									ctrlNop;
+									ctrlZERO;
 
 end architecture;

@@ -11,7 +11,7 @@ generic
 
 port(	A	:	in std_logic_vector(NUM_BITS-1 downto 0);
 		B	:	in std_logic_vector(NUM_BITS-1 downto 0);
-		ctr	:	in std_logic_vector(3 downto 0);
+		ctr	:	in std_logic_vector(2 downto 0);
 		C	:	out std_logic_vector(NUM_BITS-1 downto 0);
 		Z   : 	out std_logic
 );
@@ -33,11 +33,11 @@ begin
     process(ctr, soma, sub, and1, or1, slt)
     begin
 	 case ctr is
-	    when "0010" => C_s <= soma;
-	    when "0110" => C_s <= sub;
-       	when "0000" => C_s <= and1;
-	    when "0001" => C_s <= or1;
-		when "0111" => C_s <= slt;
+	    when "010" => C_s <= soma;
+	    when "110" => C_s <= sub;
+       	when "000" => C_s <= and1;
+	    when "001" => C_s <= or1;
+		when "111" => C_s <= slt;
 	    when others => C_s <= zero;
     end case;
 	end process;

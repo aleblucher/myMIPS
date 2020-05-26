@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "05/22/2020 12:36:53"
+-- Generated on "05/26/2020 13:14:54"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          MIPS
 -- 
@@ -37,14 +37,14 @@ SIGNAL clk : STD_LOGIC;
 SIGNAL test_opcode : STD_LOGIC_VECTOR(5 DOWNTO 0);
 SIGNAL test_out_ULA : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL test_PC : STD_LOGIC_VECTOR(31 DOWNTO 0);
-SIGNAL test_pontos_controle : STD_LOGIC_VECTOR(10 DOWNTO 0);
+SIGNAL test_pontos_controle : STD_LOGIC_VECTOR(9 DOWNTO 0);
 COMPONENT MIPS
 	PORT (
 	clk : IN STD_LOGIC;
 	test_opcode : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
 	test_out_ULA : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 	test_PC : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-	test_pontos_controle : OUT STD_LOGIC_VECTOR(10 DOWNTO 0)
+	test_pontos_controle : OUT STD_LOGIC_VECTOR(9 DOWNTO 0)
 	);
 END COMPONENT;
 BEGIN
@@ -63,9 +63,9 @@ t_prcs_clk: PROCESS
 BEGIN
 LOOP
 	clk <= '0';
-	WAIT FOR 50000 ps;
+	WAIT FOR 10000 ps;
 	clk <= '1';
-	WAIT FOR 50000 ps;
+	WAIT FOR 10000 ps;
 	IF (NOW >= 1000000 ps) THEN WAIT; END IF;
 END LOOP;
 END PROCESS t_prcs_clk;

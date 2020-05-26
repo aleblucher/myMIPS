@@ -25,25 +25,27 @@ signal out_shift_1: std_logic_vector(27 downto 0);
 signal out_Z, sel_mux_4: std_logic;
 
 -- pontos_controle alias:
- alias ULAop             : std_logic_vector(ALU_OP_WIDTH-1 downto 0) is pontos_controle(10 downto 8);
+
+ alias sel_mux_jump      : std_logic is pontos_controle(9);
+ alias sel_mux_rd_rt     : std_logic is pontos_controle(8);
  alias escreve_RC        : std_logic is pontos_controle(7);
- alias escreve_RAM       : std_logic is pontos_controle(6);
- alias leitura_RAM       : std_logic is pontos_controle(5);
- alias sel_mux_ula_mem   : std_logic is pontos_controle(4);
- alias sel_mux_rd_rt     : std_logic is pontos_controle(3);
- alias sel_mux_banco_ula : std_logic is pontos_controle(2);
- alias sel_beq           : std_logic is pontos_controle(1);
- alias sel_mux_jump      : std_logic is pontos_controle(0);
+ alias sel_mux_banco_ula : std_logic is pontos_controle(6);
+ alias ULAop             : std_logic_vector(ALU_OP_WIDTH-1 downto 0) is pontos_controle(5 downto 4);
+ alias sel_mux_ula_mem   : std_logic is pontos_controle(3);
+ alias sel_beq           : std_logic is pontos_controle(2);
+ alias leitura_RAM       : std_logic is pontos_controle(1);
+ alias escreve_RAM       : std_logic is pontos_controle(0);
  
-     -- Pontos de controle:
-    -- 7: escreve_RC-
-    -- 6: escreve_RAM-
-    -- 5: leitura_RAM-
-    -- 4: sel_mux_ula_mem:      0 ULA 1 MEM         (escrita no REG)-
-    -- 3: sel_mux_rd_rt:        0 RT_addr 1 RD_addr (endereço de escrita)-
-    -- 2: sel_mux_banco_ula:    0 REG_B 1 imediato  (ULA opera com REG ou imediato)-
-    -- 1: sel_mux_beq:          0 PC+4  1 PC+4+imediato
-    -- 0: sel_mux_jump:         0 saida mux_beq 1 PC+4 & imediato
+-- Codigos da palavra de controle:
+--  alias memWRsignal: std_logic is controlWord(0);
+--  alias memRDsignal: std_logic is controlWord(1);
+--  alias beqSignal:   std_logic is controlWord(2);
+--  alias muxUlaMem:   std_logic is controlWord(3);
+--  alias ulaOPvalue:  std_logic_vector(1 downto 0) is controlWord(5 downto 4);
+--  alias muxRtImed:   std_logic is controlWord(6);
+--  alias regcWRsignal:std_logic is controlWord(7);
+--  alias muxRtRd:     std_logic is controlWord(8);
+--  alias muxPcBeqJ:   std_logic is controlWord(9);
 
 -- instruction alias:
 
@@ -81,7 +83,7 @@ begin
 	
 	saidaPC <= out_PC;
 				
-	-- checar !! 			
+	-- checar !!
 	ROM: entity work.memoriaROM
 				generic map (
 					dataWidth => DATA_WIDTH,			
@@ -112,7 +114,6 @@ begin
 				)
 				port map(
 					clk          => clk,
-					
 					enderecoA => addr_reg_1,
 					enderecoB => addr_reg_2,
 					enderecoC => out_mux_1,

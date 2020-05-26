@@ -6,12 +6,12 @@ package constantesMIPS is
 
   constant FUNCT_WIDTH : natural := 6;
   constant OPCODE_WIDTH : natural := 6;
-  constant CONTROLWORD_WIDTH : natural := 11;
+  constant CONTROLWORD_WIDTH : natural := 10;
   constant DATA_WIDTH : natural := 32;
   constant ADDR_WIDTH : natural := 32;
   constant REGBANK_ADDR_WIDTH : natural := 5;
-  constant ALU_OP_WIDTH : natural := 3;
-  constant CTRL_ALU_WIDTH : natural := 4;
+  constant ALU_OP_WIDTH : natural := 2;
+  constant CTRL_ALU_WIDTH : natural := 3;
   constant ROM_WIDTH: natural := 8;
 
 -- codigos das instrucoes do DLX:
@@ -33,7 +33,6 @@ package constantesMIPS is
 	 -- OP CODES ---
 
     constant opCodeTipoR         : opCode_t := "000000";
---
     constant opCodeLW            : opCode_t := "100011";
     constant opCodeSW            : opCode_t := "101011";
     constant opCodeBEQ           : opCode_t := "000100";
@@ -41,24 +40,21 @@ package constantesMIPS is
     constant opCodeTipoJ         : opCode_t := "000010";
 
     -- ALU ---
-    constant readFunctULA : aluOp_t := "000";
-    constant aluOpAdd : aluOp_t := "001";
-    constant aluOpSub : aluOp_t := "010";
-    constant aluOpAnd : aluOp_t := "011";
-    constant aluOpOr  : aluOp_t := "100";
-    constant aluOpSlt : aluOp_t := "101";
-    constant aluOpDC : aluOp_t := "XXX";
+    constant readFunctULA : aluOp_t := "10";
+    constant aluOpAdd : aluOp_t := "00";
+    constant aluOpSub : aluOp_t := "01";
+    constant aluOpDC : aluOp_t := "XX";
 
     -- ALUctr:
     -- 3: inverteA
     -- 2: inverteB
     -- 1-0: sel_mux_ula_op      0 AND 1 OR 2 ADD 3 SLT
 
-    constant ulaCtrlAdd : ctrlALU_t := "0010";
-    constant ulaCtrlSub : ctrlALU_t := "0110";
-    constant ulaCtrlAnd : ctrlALU_t := "0000";
-    constant ulaCtrlOr  : ctrlALU_t := "0001";
-    constant ulaCtrlSlt : ctrlALU_t := "0111";
+    constant ulaCtrlAdd : ctrlALU_t := "010";
+    constant ulaCtrlSub : ctrlALU_t := "110";
+    constant ulaCtrlAnd : ctrlALU_t := "000";
+    constant ulaCtrlOr  : ctrlALU_t := "001";
+    constant ulaCtrlSlt : ctrlALU_t := "111";
 
     -- Pontos de controle:
     -- 7: escreve_RC-
@@ -79,12 +75,13 @@ package constantesMIPS is
 --SW        |10.1011  | add   |     0      |      1      |      X      |        X        |       X       |         1         |       0       |       0       |
 
 --  Mux1: mux([PC+4, BEQ]/J);  Mux2: mux(Rt/Rd); Mux3: mux(Rt/imediato);  Mux4: mux(ULA/mem).
-
-    constant ctrlTipoR:      ctrlWorld_t := readFunctULA & "10X01000";
-    constant ctrlTipoJ:      ctrlWorld_t := aluOpDC & "00XXXX01";
-    constant ctrlTipoBEQ:    ctrlWorld_t := aluOpSub & "00XXX010";
-    constant ctrlTipoLW:     ctrlWorld_t := aluOpAdd & "10110100";
-    constant ctrlTipoSW:     ctrlWorld_t := aluOpAdd & "01XXX100";
-	 constant ctrlNop:     ctrlWorld_t := "111" & "11111111";
+	
+	
+	constant ctrlTipoR:       ctrlWorld_t := "0110100000";
+   constant ctrlTipoJ:       ctrlWorld_t := "1X0XXXXX00";
+   constant ctrlTipoLW:      ctrlWorld_t := "0011001010";
+   constant ctrlTipoSW:      ctrlWorld_t := "0001000001";
+   constant ctrlTipoBEQ:     ctrlWorld_t := "0000010100";
+   constant ctrlZERO:        ctrlWorld_t := "0000000000";
 
 end package constantesMIPS;

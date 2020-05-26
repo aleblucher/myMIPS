@@ -172,6 +172,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "test_pontos_controle[5]",
+					"strict" : false
+				},
+				{
 					"name" : "test_pontos_controle[6]",
 					"strict" : false
 				},
@@ -185,10 +189,6 @@
 				},
 				{
 					"name" : "test_pontos_controle[9]",
-					"strict" : false
-				},
-				{
-					"name" : "test_pontos_controle[10]",
 					"strict" : false
 				},
 				{
