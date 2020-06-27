@@ -1,5 +1,5 @@
 Archive Project report for MIPS
-Tue May 26 18:19:24 2020
+Fri Jun 26 22:58:37 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -35,7 +35,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------+
 ; Archive Project Summary                                        ;
 +------------------------+---------------------------------------+
-; Archive Project Status ; Successful - Tue May 26 18:19:24 2020 ;
+; Archive Project Status ; Successful - Fri Jun 26 22:58:37 2020 ;
 ; Revision Name          ; MIPS                                  ;
 ; Top-level Entity Name  ; MIPS                                  ;
 ; Family                 ; Cyclone IV E                          ;
@@ -59,9 +59,9 @@ Info: ----------------------------------------------------------
 Info: Generated report 'MIPS.archive.rpt'
 Info (23030): Evaluation of Tcl script /home/alessandrab/intelFPGA_lite/18.1/quartus/common/tcl/apps/qpm/qar.tcl was successful
 Info: Quartus Prime Shell was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 1056 megabytes
-    Info: Processing ended: Tue May 26 18:19:24 2020
-    Info: Elapsed time: 00:00:00
+    Info: Peak virtual memory: 1055 megabytes
+    Info: Processing ended: Fri Jun 26 22:58:37 2020
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 
 

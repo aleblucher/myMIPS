@@ -80,6 +80,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "HEX6[5]",
+					"strict" : false
+				},
+				{
 					"name" : "HEX6[6]",
 					"strict" : false
 				},
@@ -297,6 +301,14 @@
 				},
 				{
 					"name" : "test_pontos_controle[9]",
+					"strict" : false
+				},
+				{
+					"name" : "test_PC[0]",
+					"strict" : false
+				},
+				{
+					"name" : "test_PC[1]",
 					"strict" : false
 				},
 				{

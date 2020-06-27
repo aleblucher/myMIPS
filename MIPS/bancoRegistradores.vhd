@@ -37,20 +37,22 @@ architecture comportamento of bancoRegistradores is
 	  begin
 		-- Inicializa os endereços:
 		
-		-- $zero (#0) := 0x00
-      -- $t0 (#8)  := 0x00
-      -- $t1 (#9)  := 0x0A
-      -- $t2 (#10) := 0x0B
-      -- $t3 (#11) := 0x0C
-      -- $t4 (#12) := 0x0D
-      -- $t5 (#13) := 0x0E
+      -- Valores iniciais no banco de registradores:
+      -- $zero (#0) := 0x00
+      -- $t0   (#8) := 0x00
+      -- $t1   (#9) := 0x0A
+      -- $t2  (#10) := 0x0B
+      -- $t3  (#11) := 0x0C
+      -- $t4  (#12) := 0x0D
+      -- $t5  (#13) := 0x16
 		
 		tmp(0) := x"00000000";
+		tmp(8) := x"00000000";
 		tmp(9) := x"0000000A";
 		tmp(10) := x"0000000B";
 		tmp(11) := x"0000000C";
 		tmp(12) := x"0000000D";
-		tmp(13) := x"0000000E";
+		tmp(13) := x"00010110";
 		return tmp;
 	end initMemory;
 	
